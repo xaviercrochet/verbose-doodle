@@ -1,0 +1,21 @@
+<div class="row" ng-repeat="item in news">
+
+  <h3 class="col-sm-1"><span class="label label-default">{{$index + 1}}</span></h3>
+  <div class="col-sm-9">
+    <div class="row">
+      <h3><a href="item.newsUrl">{{item.newsTitle}}</a></h3>
+    </div>
+    <div class="row">
+        <div class="col-sm-4">
+          <p>Posted By {{item._user.name}}</p>
+        </div>
+        <div class="col-sm-4">
+          <p>{{item.votes.length}} upvote(s)</p>
+        </div>
+        <div class="col-sm-4">
+          <a href="#"><p>{{item.comments.length}} comments</a></p>
+        </div>
+    </div>
+
+  </div>
+</div>

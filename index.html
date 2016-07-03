@@ -11,17 +11,23 @@
     <script src="app/app.module.js"></script>
     <script src="app/app.routes.js"></script>
     <script src="app/app.config.js"></script>
+    <script src="app/app.controller.js"></script>
 
     <!-- Services -->
     <script src="app/services/login.service.js"></script>
     <script src="app/services/news.service.js"></script>
 
+    <!-- News Module -->
+    <script src="app/news/news.module.js"></script>
+    <script src="app/news/news.index.controller.js"></script>
+
+
     <!-- stylesheets -->
 </head>
 <body>
-  <div class="container-fluid">
-    <div class="col-sm-12">
-      <h1>COUCOU</h1>
+  <div class="container-fluid" ng-controller="RootController as vm">
+    <h1></h1>
+    <div class="col-sm-11 col-sm-offset-1" ng-view>
     </div>
   </div>
 </body>

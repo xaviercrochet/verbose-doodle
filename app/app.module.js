@@ -1,3 +1,5 @@
 angular.module('adnApp', [
-  'ngRoute'
+  'ngRoute',
+  'config',
+  'adnApp.news'
 ]);
