@@ -21,7 +21,16 @@ angular.module('adnApp')
     };
 
     function getSingleNews(id){
-
+      var url = ENV.apiEndpoint + "/" + id;
+      var d = $q.defer();
+      $http.get(url)
+        .success(function(data, status, headers, config){
+          d.resolve(data);
+        })
+        .error(function(err){
+          d.reject(err);
+        })
+      return d.promise;
     };
 
     return service;

@@ -1,7 +1,13 @@
 angular.module('adnApp.news')
   .controller('NewsIndexController', NewsIndexController);
 
-  function NewsIndexController($scope, news){
+  function NewsIndexController($scope, $location, news){
     var vm = this;
-    $scope.news = news
+    vm.news = news
+
+    vm.showNews = showNews;
+
+    function showNews(index){
+      $location.path("/" + vm.news[index]._id);
+    };
   }

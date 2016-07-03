@@ -1,4 +1,4 @@
-<div class="row" ng-repeat="item in news">
+<div class="row" ng-repeat="item in vm.news">
 
   <h3 class="col-sm-1"><span class="label label-default">{{$index + 1}}</span></h3>
   <div class="col-sm-9">
@@ -13,7 +13,7 @@
           <p>{{item.votes.length}} upvote(s)</p>
         </div>
         <div class="col-sm-4">
-          <a href="#"><p>{{item.comments.length}} comments</a></p>
+          <a href ng-click="vm.showNews($index)"><p>{{item.comments.length}} comments</a></p>
         </div>
     </div>
 
