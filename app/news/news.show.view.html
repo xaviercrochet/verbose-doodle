@@ -1,0 +1,20 @@
+<div class="row">
+  <div class="col-sm-9">
+    <h3><a href="{{vm.news.newsUrl}}">{{vm.news.newsTitle}}</a></h3>
+    <p>{{vm.news.votes.length}} upvote(s)</p>
+    <p><em>Posted by {{vm.news._user.name}}</em></p>
+  </div>
+</div>
+<div class="row">
+  <div class="col-sm-6 col-sm-offset-1">
+    <div class="row">
+      <h4 class="">Top Comments</h4>
+    </div>
+    <div class="row" ng-repeat="comment in vm.news.comments">
+      <p>
+        <span class="glyphicon glyphicon-console"></span>
+        {{comment.content}} <em><small class="pull-right">written by <a href>{{comment._author.name}}</a></small></em>
+      </p>
+    </div>
+  </div>
+</div>

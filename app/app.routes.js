@@ -7,7 +7,6 @@ angular.module('adnApp')
       controllerAs: 'vm',
       resolve: {
         news: function(NewsService, $route){
-          console.log($route.current.params.newsId)
           return NewsService.getSingleNews($route.current.params.newsId);
         }
       }
