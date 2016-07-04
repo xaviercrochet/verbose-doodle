@@ -1,7 +1,7 @@
 angular.module('adnApp')
   .controller('RootController', RootController);
 
-  function RootController($uibModal){
+  function RootController($uibModal, $location, LoginService){
     var vm = this;
     vm.loggedIn = false;
 
@@ -31,6 +31,8 @@ angular.module('adnApp')
     };
 
     function logout(){
+      LoginService.clearCrendentials();
       vm.loggedIn = false;
+      $location.path('/');
     };
   }

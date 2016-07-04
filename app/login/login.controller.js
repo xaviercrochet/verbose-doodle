@@ -13,6 +13,7 @@ angular.module('adnApp.login')
         .then(
           function(response){
             $uibModalInstance.close({});
+            LoginService.setCredentials(vm.username, "");
           },
           function(error){
             /* Display Something here */

@@ -2,6 +2,8 @@ angular.module('adnApp', [
   'ngRoute',
   'ngAnimate',
   'ui.bootstrap',
+  'base64',
+  'ngCookies',
   'config',
   'adnApp.news',
   'adnApp.login'
