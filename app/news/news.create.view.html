@@ -1,0 +1,19 @@
+<div class="modal-header">
+  <h5 class="text-center">Posting a News</h5>
+</div>
+
+<div class="modal-body">
+    <div class="form-group">
+      <label>Title</label>
+      <input ng-model="vm.newsTitle" type="text" class="form-control">
+    </div>
+    <div class="form-group">
+      <label>Url</label>
+      <input ng-model="vm.newsUrl" type="text" class="form-control">
+    </div>
+</div>
+
+<div class="modal-footer">
+  <button class="btn btn-primary pull-right" ng-click="vm.ok()">Save</button>
+  <button class="btn btn-warning pull-left" ng-click="vm.cancel()">Cancel</button>
+</div>

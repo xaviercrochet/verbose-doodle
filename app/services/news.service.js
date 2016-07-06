@@ -4,7 +4,22 @@ angular.module('adnApp')
   function NewsService($http, $q, ENV){
     var service = {
       getNews: getNews,
-      getSingleNews: getSingleNews
+      getSingleNews: getSingleNews,
+      createNews: createNews
+    };
+
+    function createNews(newsTitle, newsUrl){
+      var url = ENV.apiEndpoint;
+      var d = $q.defer();
+      $http.post(url, { 'itemTitle': newsTitle, 'itemUrl': newsUrl }).then(
+        function(res){
+          d.resolve(res);
+
+        }, function(error){
+          d.reject(error);
+        }
+      );
+      return d.promise;
     };
 
     function getNews(){

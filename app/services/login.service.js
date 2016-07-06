@@ -39,8 +39,6 @@ angular.module('adnApp')
           name: username
         }
       };
-      $rootScope.$broadcast('logged-in');
-      $rootScope.$emit('logged-in');
       $http.defaults.headers.common['Authorization'] = 'Basic ' + authData
       $cookies.put('globals', $rootScope.globals);
     }

@@ -9,12 +9,10 @@ angular.module('adnApp.login')
     vm.username = "";
 
     function ok(){
-      console.log("dsfds")
       LoginService.doLogin(vm.username)
         .then(
           function(response){
-            console.log("coucou")
-            $uibModalInstance.close({});
+            $uibModalInstance.close({/* put user retrieved from backend here */});
             LoginService.setCredentials(vm.username, "");
           },
           function(error){
