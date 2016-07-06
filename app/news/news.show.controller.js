@@ -4,4 +4,4 @@ angular.module('adnApp.news')
   function NewsShowController(news) {
     var vm = this;
     vm.news = news;
-  };
+  }

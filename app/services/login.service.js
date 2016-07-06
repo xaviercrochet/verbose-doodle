@@ -55,10 +55,6 @@ angular.module('adnApp')
       var d = $q.defer();
       $http.post(url, {'name': name}).then(
         function(result){
-          /*
-            if result == ok => set special authentication header
-          */
-          $rootScope.$broadcast('logged-in')
           d.resolve(result);
         },
         function(err) {
