@@ -8,6 +8,7 @@ angular.module('adnApp.news')
     vm.showNews = showNews;
 
     function showNews(index){
+      console.log(index)
       $location.path("/" + vm.news[index]._id);
     };
   }

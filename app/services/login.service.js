@@ -7,9 +7,24 @@ angular.module('adnApp')
     var service = {
       doLogin: doLogin,
       setCredentials: setCredentials,
-      clearCrendentials: clearCrendentials
+      clearCrendentials: clearCrendentials,
+      isLoggedIn: isLoggedIn,
+      setLoggedIn: setLoggedIn
     };
 
+    var loggedIn = false;
+    function setLoggedIn(value){
+      if(value){
+        loggedIn = true;
+      }
+      else{
+        loggedIn = false;
+      }
+    };
+
+    function isLoggedIn(){
+      return loggedIn;
+    };
     /*
       for the sake of simplicity, we only use "username-based" authentication :D
       N.B.
@@ -24,11 +39,14 @@ angular.module('adnApp')
           name: username
         }
       };
+      $rootScope.$broadcast('logged-in');
+      $rootScope.$emit('logged-in');
       $http.defaults.headers.common['Authorization'] = 'Basic ' + authData
       $cookies.put('globals', $rootScope.globals);
     }
 
     function clearCrendentials(){
+      $rootScope.$broadcast('logged-out');
       $rootScope.globals = {};
       $cookies.remove('globals');
       $http.defaults.headers.common.Authorization = 'Basic ';
@@ -42,6 +60,7 @@ angular.module('adnApp')
           /*
             if result == ok => set special authentication header
           */
+          $rootScope.$broadcast('logged-in')
           d.resolve(result);
         },
         function(err) {

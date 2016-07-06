@@ -1,13 +1,13 @@
 angular.module('adnApp')
   .controller('RootController', RootController);
 
-  function RootController($uibModal, $location, LoginService){
+  function RootController($scope, $rootScope, $uibModal, $location, LoginService){
     var vm = this;
     vm.loggedIn = false;
 
     vm.openLoginModal = openLoginModal;
-    vm.openRegisterModal = openRegisterModal;
     vm.logout = logout;
+    vm.isLoggedIn = isLoggedIn;
 
     function openLoginModal(){
       var modalInstance = $uibModal.open({
@@ -18,21 +18,23 @@ angular.module('adnApp')
         size: 'sm',
       });
 
+
       modalInstance.result.then(function(){
-        vm.loggedIn = true;
+        LoginService.setLoggedIn(true);
         /* todo set a cookie to logged in */
       }, function(error) {
         /* do nothing */
+        console.error(error);
       });
     };
 
-    function openRegisterModal(){
-
+    function isLoggedIn(){
+      return LoginService.isLoggedIn();
     };
 
     function logout(){
       LoginService.clearCrendentials();
-      vm.loggedIn = false;
+      LoginService.setLoggedIn(false);
       $location.path('/');
     };
   }

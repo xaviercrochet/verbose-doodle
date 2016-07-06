@@ -6,7 +6,8 @@ angular.module('adnApp', [
   'ngCookies',
   'config',
   'adnApp.news',
-  'adnApp.login'
+  'adnApp.login',
+  'adnApp.register'
 ]);
 
 /* TODO:
