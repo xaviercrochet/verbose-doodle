@@ -2,6 +2,6 @@
  .config(function($httpProvider){
    $httpProvider.defaults.headers.common['Authorization'] = 'Basic auth';
  })
-.constant('ENV', {name:'development',apiEndpoint:'http://localhost:3000'})
+.constant('ENV', {name:'production',apiEndpoint:'http://adn-news.herokuapp.com/'})
 
 ;
