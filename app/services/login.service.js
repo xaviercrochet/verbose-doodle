@@ -1,7 +1,7 @@
 angular.module('adnApp')
   .service('LoginService', LoginService);
   /*
-    TODO : find better name
+    TODO : find better name & split
   */
   function LoginService($http, $q, ENV, $http, $cookies, $rootScope, $base64){
     var service = {
@@ -9,7 +9,8 @@ angular.module('adnApp')
       setCredentials: setCredentials,
       clearCrendentials: clearCrendentials,
       isLoggedIn: isLoggedIn,
-      setLoggedIn: setLoggedIn
+      setLoggedIn: setLoggedIn,
+      getCurrentUser: getCurrentUser
     };
 
     var loggedIn = false;
@@ -31,6 +32,10 @@ angular.module('adnApp')
       The following crendential-related stuff is based on this (very) usefull post
       http://jasonwatmore.com/post/2014/05/26/AngularJS-Basic-HTTP-Authentication-Example.aspx
     */
+
+    function getCurrentUser(){
+      return $rootScope.global.currentUser;
+    };
 
     function setCredentials(username, password){
       var authData = $base64.encode(username+":"+password);
@@ -55,6 +60,7 @@ angular.module('adnApp')
       var d = $q.defer();
       $http.post(url, {'name': name}).then(
         function(result){
+          console.log(result.data);
           d.resolve(result);
         },
         function(err) {
