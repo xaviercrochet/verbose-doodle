@@ -1,1 +1,3 @@
-angular.module('adnApp.news', [])
+angular.module('adnApp.news', [
+  'adnApp.news.comment'
+]);
