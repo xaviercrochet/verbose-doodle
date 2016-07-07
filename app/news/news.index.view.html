@@ -6,13 +6,13 @@
       <h3><a href="{{item.newsUrl}}">{{item.newsTitle}}</a></h3>
     </div>
     <div class="row">
-        <div class="col-sm-4">
-          <p>Posted By {{item._user.name}}</p>
+        <div class="col-sm-6">
+          <p class="">Posted By <a href>{{item._user.name}}</a> <em class="pull-right">{{item.date | date: 'medium'}}</em></p>
         </div>
-        <div class="col-sm-4">
+        <div class="col-sm-3">
           <p>{{item.votes.length}} upvote(s)</p>
         </div>
-        <div class="col-sm-4">
+        <div class="col-sm-3">
           <a href="#/{{item._id}}" ><p>{{item.comments.length}} comments</a></p>
         </div>
     </div>

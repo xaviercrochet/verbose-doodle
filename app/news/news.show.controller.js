@@ -7,6 +7,11 @@ angular.module('adnApp.news')
     vm.comment = "";
 
     vm.submitComment = submitComment;
+    vm.formatDate = formatDate;
+
+    function formatDate(date){
+
+    };
 
     function submitComment(){
       CommentService.createComment(news._id, vm.comment).then(
