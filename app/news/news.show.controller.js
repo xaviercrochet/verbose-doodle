@@ -5,6 +5,7 @@ angular.module('adnApp.news')
     var vm = this;
     vm.news = news;
     vm.comment = "";
+    vm.justVoted = false;
 
     vm.submitComment = submitComment;
     vm.upVote = upVote;
@@ -35,6 +36,7 @@ angular.module('adnApp.news')
       VoteService.upVote(news._id).then(
         function(vote){
           vm.news.votes.push(vote);
+          vm.justVoted = true;
       });
     };
 

@@ -3,7 +3,7 @@
       <h3>
         <a href="{{vm.news.newsUrl}}">{{vm.news.newsTitle}}</a>
         <small>Posted by {{vm.news._user.name}} - {{vm.news.date | date:'medium'}}</small>
-        <button ng-disabled="vm.alreadyVoted()" ng-if="vm.displayVoteButton()" class="btn btn-primary pull-right" ng-click="vm.upVote()">
+        <button ng-disabled="vm.justVoted || vm.alreadyVoted() " ng-if="vm.displayVoteButton()" class="btn btn-primary pull-right" ng-click="vm.upVote()">
           <span class="glyphicon glyphicon-thumbs-up"></span></button>
       </h3>
       <p>{{vm.news.votes.length}} upvote(s)</p>
