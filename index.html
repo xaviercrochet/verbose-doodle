@@ -1,5 +1,6 @@
 <html lang="en" ng-app="adnApp">
 <head>
+    <base href="/">
     <!-- External Libraries -->
     <script src="node_modules/angular/angular.js"></script>
     <script src="node_modules/angular-route/angular-route.js"></script>
@@ -52,7 +53,7 @@
         <div ng-if="!vm.isLoggedIn()" class="pull-right">
           <a ng-click="vm.openLoginModal()" href>Login</a>
           -
-          <a href="#/register">Register</a>
+          <a href="/register">Register</a>
         </div>
         <div ng-if="vm.isLoggedIn()" class="pull-right">
           <a ng-click="vm.openCreateNewsModal()" href>Post A News</a>
