@@ -16,7 +16,7 @@ angular.module('adnApp')
       controller: 'RegisterController',
       controllerAs: 'vm'
     })
-    .when('/:newsId', {
+    .when('/news/:newsId', {
       templateUrl: 'app/news/news.show.view.html',
       controller: 'NewsShowController',
       controllerAs: 'vm',
