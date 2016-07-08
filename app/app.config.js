@@ -5,4 +5,4 @@ angular.module('config', [])
   .config(function ($locationProvider){
    $locationProvider.html5Mode(true);
  })
-  .constant('ENV', {name:'production',apiEndpoint:'https://adn-news.herokuapp.com/'});
+  .constant('ENV', {name:'production',apiEndpoint:'https://adn-news.herokuapp.com'});
