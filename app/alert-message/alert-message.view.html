@@ -1,0 +1,11 @@
+<div >
+  <uib-alert type="info" ng-repeat="msg in vm.infoMessages" close="vm.deleteInfoMessage($index)">
+    {{msg.content}}
+  </uib-alert>
+  <uib-alert type="success" ng-repeat="msg in vm.successMessages" close="vm.deleteSuccessMessage($index)">
+    {{msg.content}}
+  </uib-alert>
+  <uib-alert type="danger" ng-repeat="msg in vm.errorMessages" close="vm.deleteErrorMessage($index)">
+    {{msg.content}}
+  </uib-alert>
+</div>

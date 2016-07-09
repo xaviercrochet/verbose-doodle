@@ -7,7 +7,8 @@ angular.module('adnApp', [
   'config',
   'adnApp.news',
   'adnApp.login',
-  'adnApp.register'
+  'adnApp.register',
+  'adnApp.alertMessage'
 ]);
 
 /* TODO:

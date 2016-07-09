@@ -21,10 +21,14 @@ angular.module('adnApp')
 
       loginModalInstance.result.then(function(user){
         LoginService.setLoggedIn(true);
+        $rootScope.$broadcast("success-message-event", "Successfully logged in.");
         /* todo set a cookie to logged in */
       }, function(error) {
         /* do nothing */
-        console.error(error);
+        $rootScope.$broadcast(
+          "error-message-event",
+          "Something wen wrong when trying to log in. Maybe you miss-typed your username?"
+        );
       });
     };
 
