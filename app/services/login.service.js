@@ -60,7 +60,6 @@ angular.module('adnApp')
       var d = $q.defer();
       $http.post(url, {'name': name}).then(
         function(result){
-          console.log(result.data);
           d.resolve(result);
         },
         function(err) {

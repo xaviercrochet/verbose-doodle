@@ -39,7 +39,7 @@ angular.module('adnApp')
 
       createNewsModalInstance.result.then(
         function(news){
-          $location.path('/'+news._id);
+          $location.path('/news/'+news._id);
       });
     };
 
