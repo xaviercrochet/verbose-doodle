@@ -55,7 +55,13 @@
 <body>
   <div class="container-fluid" ng-controller="RootController as vm" style="margin-top: 25px;">
     <div class="row">
-      <div class="col-sm-2 col-sm-offset-8">
+      <div class="col-sm-2 col-sm-offset-2">
+        <a style="font-size: 200%;" href="#/"><span class="glyphicon glyphicon-home"></span></a>
+      </div>
+      <div class="col-sm-4">
+        <h4 class="text-center">ADN News</h4>
+      </div>
+      <div class="col-sm-2">
         <div ng-if="!vm.isLoggedIn()" class="pull-right">
           <a ng-click="vm.openLoginModal()" href>Login</a>
           -
