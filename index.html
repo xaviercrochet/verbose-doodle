@@ -1,6 +1,9 @@
 <html lang="en" ng-app="adnApp">
 <head>
+<<<<<<< HEAD
     <base href="/verbose-doodle/">
+=======
+>>>>>>> html5-disabled
     <!-- External Libraries -->
     <script src="node_modules/angular/angular.js"></script>
     <script src="node_modules/angular-route/angular-route.js"></script>
@@ -30,6 +33,7 @@
     <script src="app/news/news.module.js"></script>
     <script src="app/news/news.index.controller.js"></script>
     <script src="app/news/news.show.controller.js"></script>
+    <script src="app/news/news.create.controller.js"></script>
 
     <!-- Comment Module -->
     <script src="app/news/comment/comment.module.js"></script>
@@ -53,7 +57,7 @@
         <div ng-if="!vm.isLoggedIn()" class="pull-right">
           <a ng-click="vm.openLoginModal()" href>Login</a>
           -
-          <a href="/register">Register</a>
+          <a href="#/register">Register</a>
         </div>
         <div ng-if="vm.isLoggedIn()" class="pull-right">
           <a ng-click="vm.openCreateNewsModal()" href>Post A News</a>

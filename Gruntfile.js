@@ -27,7 +27,7 @@ module.exports = function(grunt) {
         constants: {
           ENV: {
             name: 'production',
-            apiEndpoint: 'https://adn-news.herokuapp.com/'
+            apiEndpoint: 'https://adn-news.herokuapp.com'
           }
         }
       }
