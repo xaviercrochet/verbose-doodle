@@ -1,7 +1,7 @@
 angular.module('adnApp.news')
   .controller('NewsCreateController', NewsCreateController);
 
-  function NewsCreateController($uibModalInstance, NewsService){
+  function NewsCreateController($rootScope, $uibModalInstance, NewsService){
     var vm = this;
 
     vm.newsTitle = "";
@@ -17,6 +17,10 @@ angular.module('adnApp.news')
         },
         function(err){
           console.error(err);
+          $rootScope.$broadcast(
+            "error-message-event",
+            "Something went wrong when trying to create the news. Maybe you forgot the title or the url?"
+          );
         }
       )
     };

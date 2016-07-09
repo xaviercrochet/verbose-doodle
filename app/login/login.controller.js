@@ -1,7 +1,7 @@
 angular.module('adnApp.login')
   .controller('LoginModalController', LoginModalController);
 
-  function LoginModalController($uibModalInstance, LoginService){
+  function LoginModalController($rootScope, $uibModalInstance, LoginService){
     var vm = this;
 
     vm.ok = ok;
@@ -16,8 +16,10 @@ angular.module('adnApp.login')
             LoginService.setCredentials(vm.username, "");
           },
           function(error){
-            console.error(error);
-            /* Display Something here */
+            $rootScope.$broadcast(
+              "error-message-event",
+              "Something wen wrong when trying to log in. Maybe you miss-typed your username?"
+            );
           })
     };
 

@@ -1,7 +1,7 @@
 angular.module('adnApp.news')
   .controller('NewsShowController', NewsShowController);
 
-  function NewsShowController(news, CommentService, VoteService, LoginService) {
+  function NewsShowController($rootScope, news, CommentService, VoteService, LoginService) {
     var vm = this;
     vm.news = news;
     vm.comment = "";
@@ -37,12 +37,14 @@ angular.module('adnApp.news')
         function(vote){
           vm.news.votes.push(vote);
           vm.justVoted = true;
+          $rootScope.$broadcast("success-message-event", "News successfully upvoted.");
       });
     };
 
     function submitComment(){
       CommentService.createComment(news._id, vm.comment).then(
         function(res){
+          $rootScope.$broadcast("success-message-event", "Comment successfully posted.");
           news.comments.push(res);
           vm.comment = "";
       });
